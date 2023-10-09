@@ -11,12 +11,31 @@
       <h1>Music Database</h1>
     </header>
 
-    <div class="search-grid">
+    <div class="filter-grid">
+      <div>
+        <label for="sort">Sort:</label>
+        <select id="sortBy" class="sort">
+          <option value="default" selected>A-Z</option>
+          <option value="reverse">Z-A</option>
+        </select>
+      </div>
       <div>
         <label for="searchbar"></label>
         <input type="search" id="searchbar" placeholder="Search for ..." />
       </div>
+       <div>
+        <label for="filter">Filter:</label>
+          <select id="filterByType" class="sort">
+          <option value="" selected>Type</option>
+          <option value="albums">Albums</option>
+          <option value="tracks">Tracks</option>
+          <option value="artist">Artists</option>
+        </select>
+      </div>
+  
     </div>
+    </div>
+    
 
     <div>
       <h2>Artists</h2>
@@ -33,5 +52,6 @@
       <section id="tracks" class="grid-container"></section>
     </div>
   </body>
+
   <script src="app.js" type="module"></script>
 </html>

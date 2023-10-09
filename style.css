@@ -56,6 +56,18 @@ p {
   border-radius: 1em;
 }
 
+.filter-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.sort {
+  border: 2px solid black;
+  margin-left: 0;
+  background-color: #67a6dd;
+}
+
 /* SEARCH STYLING */
 .search-grid {
   display: flex;
