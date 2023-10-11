@@ -14,4 +14,8 @@ export default class Artist {
   setAlbum(album) {
     this.albums.push(album.id)
   }
+
+  getArtistId() {
+    return this.id
+  }
 }

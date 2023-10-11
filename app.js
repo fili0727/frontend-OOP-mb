@@ -1,5 +1,6 @@
 "use strict";
 
+import { artistList, instantiateArtists } from "./controller/artistController.js";
 import { updateArtistsGrid, searchBackend } from "./rest.js";
 
 window.addEventListener("load", initApp);
@@ -13,6 +14,9 @@ async function initApp() {
   });
 
   await updateArtistsGrid();
+  await instantiateArtists()
+
+  artistList.render()
 }
 
 function showArtists(artists) {
