@@ -1,12 +1,8 @@
 import Artist from "../model/artist.js";
 
-export default class Dialog {
-  constructor(id) {
-    this.dialog = document.createElement("dialog");
-    this.dialog.id = id;
-    document
-      .querySelector("main")
-      .insertAdjacentElement("afterend", this.dialog);
+export default class ArtistCreateDialog {
+  constructor(container) {
+    this.container = document.querySelector(`#${container}`)
   }
 
   show() {
@@ -24,23 +20,23 @@ export default class Dialog {
         <button>Create</button>
       </form>`;
 
-    this.dialog.innerHTML = html;
+    this.container.insertAdjacentHTML('beforeend', html)
 
-    this.dialog
+    this.container
       .querySelector("form")
-      .addEventListener("submit", this.submit.bind(this));
+      .addEventListener("submit", () => {
+        console.log('clicked dialog');
+      });
   }
 
   submit() {
     const form = this.dialog.querySelector("form");
-    this.artist = new this.artist({
+    this.artist = new Artist({
       name: form.name.value,
       careerStart: form.careerStart.value,
       img: form.img.value,
     });
 
     form.reset();
-
-    controller.createArtist(this.artist);
   }
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-import { artistList, instantiateArtists } from "./controller/artistController.js";
+import { artistList, createDialog, instantiateArtists } from "./controller/artistController.js";
 import { updateArtistsGrid, searchBackend } from "./rest.js";
 
 window.addEventListener("load", initApp);
@@ -17,6 +17,7 @@ async function initApp() {
   await instantiateArtists()
 
   artistList.render()
+  createDialog.render()
 }
 
 function showArtists(artists) {
