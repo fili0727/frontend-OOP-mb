@@ -9,20 +9,22 @@
   <body>
     <main>
     <header>
+      <img src="Vinyl.png" alt="Vinyl">
       <h1>Music Database</h1>
     </header>
 
-    <div class="filter-grid">
+    <div class="option-grid">
+      <button id="registerBtn">Register..</button>
+      <div>
+        <label for="searchbar"></label>
+        <input type="search" id="searchbar" placeholder="Search for ..." />
+      </div>
       <div>
         <label for="sort">Sort:</label>
         <select id="sortBy" class="sort">
           <option value="default" selected>A-Z</option>
           <option value="reverse">Z-A</option>
         </select>
-      </div>
-      <div>
-        <label for="searchbar"></label>
-        <input type="search" id="searchbar" placeholder="Search for ..." />
       </div>
        <div>
         <label for="filter">Filter:</label>
