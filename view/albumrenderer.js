@@ -5,7 +5,7 @@ export class AlbumRenderer {
     render() {
         const html =/*html*/
             `
-            <article class="grid-item-artist">
+            <article class="grid-item-album">
                 <h2>${this.item.title}</h2>
                 <p>Release date: ${this.item.release_date}</p>
             </article>

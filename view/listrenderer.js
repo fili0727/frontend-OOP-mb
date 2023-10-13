@@ -1,15 +1,15 @@
 export class ListRenderer {
     constructor(container, itemRenderer, list) {
         this.container = document.querySelector(`#${container}`)
-        this.itemRenderer = itemRenderer
+        this.renderers = list.map(item => new itemRenderer(item));
         this.list = list
     }
 
     render() {
         this.clear();
 
-        this.list.forEach((item) => {
-            const html = this.itemRenderer.render(item)
+        this.renderers.forEach((renderer) => {
+            const html = renderer.render()
 
             this.container.insertAdjacentHTML('beforeend', html)
         })

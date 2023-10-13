@@ -35,6 +35,7 @@ p {
   gap: 1em;
   padding: 1em;
 }
+
 @media (min-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr 1fr;
@@ -81,4 +82,8 @@ p {
   max-width: 350px;
   padding: 0.5em;
   border: 2px solid black;
+}
+
+.hide {
+  display: none;
 }
