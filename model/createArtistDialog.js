@@ -1,4 +1,4 @@
-import Artist from "../model/artist.js";
+import Artist from "./artist.js";
 
 export default class ArtistCreateDialog {
   constructor(container) {

@@ -21,7 +21,7 @@ export class ListRenderer {
             const element = this.container.lastElementChild;
 
             element.addEventListener('click', () => {
-                this.open();
+                console.log(item);
             });
         });
 
