@@ -9,8 +9,11 @@ export class ArtistRenderer {
             <article class="grid-item-artist">
                 <h2>${this.item.name}</h2>
                 <p>Career start: ${this.item.career_start}</p>
+                
             </article>
             `;
     return html
   }
 }
+
+//<img src="${this.item.img}">
