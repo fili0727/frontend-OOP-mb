@@ -1,4 +1,3 @@
-import Artist from "../model/artist.js";
 
 export default class Dialog {
   constructor(id) {

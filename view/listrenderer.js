@@ -19,4 +19,5 @@ export class ListRenderer {
     clear() {
         this.container.innerHTML = '';
     }
+
 }

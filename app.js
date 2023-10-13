@@ -10,10 +10,7 @@ window.addEventListener("load", initApp);
 async function initApp() {
   console.log("JS kører");
   const searchInput = document.querySelector("#searchbar");
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value;
-    searchBackend(query);
-  });
+  searchInput.addEventListener("keyup", searchBackend);
 
   document.querySelector("#filterByType").addEventListener("change", showFilter)
 
