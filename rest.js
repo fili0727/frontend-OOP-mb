@@ -58,17 +58,25 @@ async function searchBackend(query) {
 }
 
 export function updateSearchResults(artists, tracks, albums) {
-  if (artists != []) {
+  if (artists.length !== 0) {
     updatedArtistList.render();
     searchedArtistList.length = 0;
+  } else {
+    document.querySelector("#artists-list").innerHTML = `<h3>NO ARTISTS FOUND</h3>`;
   }
-  if (tracks != []) {
+
+  if (tracks.length !== 0) {
     updatedTrackList.render();
     searchedTrackList.length = 0;
+  } else {
+    document.querySelector("#tracks-list").innerHTML = `<h3>NO TRACKS FOUND</h3>`;
   }
-  if (albums != []) {
+
+  if (albums.length !== 0) {
     updatedAlbumList.render();
     searchedAlbumList.length = 0;
+  } else {
+    document.querySelector("#albums-list").innerHTML = `<h3>NO ALBUMS FOUND</h3>`;
   }
 }
 export { updateArtistsGrid, searchBackend };

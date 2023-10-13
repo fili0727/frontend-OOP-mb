@@ -1,4 +1,3 @@
-
 export class ListRenderer {
     constructor(container, itemRenderer, list) {
         this.container = document.querySelector(`#${container}`);
