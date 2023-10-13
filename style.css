@@ -6,6 +6,10 @@ body {
   background-repeat: repeat;
 }
 
+.hide {
+  display: none;
+}
+
 img {
   width: 100%;
   height: auto;

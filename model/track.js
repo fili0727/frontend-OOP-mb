@@ -3,4 +3,8 @@ export default class Track {
     this.title = obj.title;
     this.duration = obj.duration;
   }
+
+  getClassName() {
+    return 'Track';
+  }
 }

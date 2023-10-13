@@ -11,4 +11,8 @@ export default class Album {
   getAlbumReleaseDate() {
     return this.release_date;
   }
+
+  getClassName() {
+    return 'Album';
+  }
 }

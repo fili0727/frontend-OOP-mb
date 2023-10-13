@@ -4,18 +4,22 @@ export default class Artist {
     this.name = obj.name;
     this.career_start = obj.career_start;
     this.img = obj.img;
-    this.albums = obj.albums
+    this.albums = obj.albums;
   }
 
   getAlbums() {
-    return this.albums
+    return this.albums;
   }
 
   setAlbum(album) {
-    this.albums.push(album.id)
+    this.albums.push(album.id);
   }
 
   getArtistId() {
-    return this.id
+    return this.id;
+  }
+
+  getClassName() {
+    return 'Artist';
   }
 }
