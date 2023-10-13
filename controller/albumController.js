@@ -4,7 +4,10 @@ import { AlbumRenderer } from "../view/albumrenderer.js";
 import { ListRenderer } from "../view/listrenderer.js";
 
 export const albums = [];
+export const searchedAlbumList = [];
+
 export const albumList = new ListRenderer('albums-list', new AlbumRenderer(), albums);
+export const updatedAlbumList = new ListRenderer('albums-list', new AlbumRenderer, searchedAlbumList);
 
 export async function instantiateAlbums() {
     const albumData = await readAlbums();

@@ -1,8 +1,8 @@
 "use strict";
 
-import { albumList } from "./controller/albumController.js";
-import { artistList } from "./controller/artistController.js";
-import { trackList } from "./controller/trackController.js";
+import { albumList, albums, searchedAlbumList, updatedAlbumList } from "./controller/albumController.js";
+import { artistList, artists, searchedArtistList, updatedArtistList } from "./controller/artistController.js";
+import { searchedTrackList, trackList, tracks, updatedTrackList } from "./controller/trackController.js";
 
 const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 
@@ -24,45 +24,47 @@ export async function readTracks() {
   return data;
 }
 
-// Er ikke sikker på at denne funktion behøves længere da alt bliver opdateret via renderer 
 async function updateArtistsGrid() {
-  const artistsUpdated = await readArtists();
   artistList.render();
-  const albumsUpdated = await readAlbums();
   albumList.render();
-  const tracksUpdated = await readTracks();
   trackList.render();
 }
 
 async function searchBackend(query) {
-  const response = await fetch(`${endpoint}/fullAlbums/search?q=${query}`);
-  const searchData = await response.json();
-  updateSearchResults(searchData);
-}
+  if (query !== '') {
+    const response = await fetch(`${endpoint}/fullAlbums/search?q=${query}`);
+    const searchData = await response.json();
 
-function updateSearchResults(searchResults) {
-  if (searchResults && Array.isArray(searchResults)) {
-    const filteredArtists = [];
-    const filteredAlbums = [];
-    const filteredTracks = [];
+    searchData.forEach(item => {
+      if (item.career_start) {
+        const searchedArtist = item;
+        const updatedArtist = artists.find(artist => artist.name === searchedArtist.name);
+        searchedArtistList.push(updatedArtist);
+      } else if (item.duration) {
+        const searchedTrack = item;
+        const updatedTrack = tracks.find(track => track.title === searchedTrack.title);
+        searchedTrackList.push(updatedTrack);
+      } else if (item.release_date) {
+        const searchedAlbum = item;
+        const updatedAlbum = albums.find(album => album.title === searchedAlbum.title);
+        searchedAlbumList.push(updatedAlbum);
+      }
+    });
 
-    for (const result of searchResults) {
-      if (result.name !== null && result.career_start !== null) {
-        filteredArtists.push(result);
-      }
-      if (result.title !== null && result.release_date !== null) {
-        filteredAlbums.push(result);
-      }
-      if (result.title !== null && result.duration !== null) {
-        filteredTracks.push(result);
-      }
+    if (searchedArtistList != []) {
+      updatedArtistList.render();
+      searchedArtistList.length = 0;
     }
-
-    showArtists(filteredArtists);
-    showAlbums(filteredAlbums);
-    showTracks(filteredTracks);
+    if (searchedTrackList != []) {
+      updatedTrackList.render();
+      searchedTrackList.length = 0;
+    }
+    if (searchedAlbumList != []) {
+      updatedAlbumList.render();
+      searchedAlbumList.length = 0;
+    }
   } else {
-    console.log("Invalid search results data");
+    updateArtistsGrid();
   }
 }
 
