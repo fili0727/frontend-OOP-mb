@@ -2,11 +2,15 @@ import Artist from "../model/artist.js";
 
 export default class ArtistCreateDialog {
   constructor(container) {
-    this.container = document.querySelector(`#${container}`)
+    this.container = document.querySelector(`#${container}`);
   }
 
   show() {
     this.dialog.showModal();
+  }
+
+  close() {
+    this.dialog.close();
   }
 
   render() {
@@ -20,7 +24,7 @@ export default class ArtistCreateDialog {
         <button>Create</button>
       </form>`;
 
-    this.container.insertAdjacentHTML('beforeend', html)
+    this.container.insertAdjacentHTML('beforeend', html);
 
     this.container
       .querySelector("form")

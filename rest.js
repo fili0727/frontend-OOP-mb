@@ -1,6 +1,8 @@
 "use strict";
 
-import { showArtists, showAlbums, showTracks } from "./app.js";
+import { albumList } from "./controller/albumController.js";
+import { artistList } from "./controller/artistController.js";
+import { trackList } from "./controller/trackController.js";
 
 const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 
@@ -10,13 +12,13 @@ export async function readArtists() {
   return data;
 }
 
-async function readAlbums() {
+export async function readAlbums() {
   const response = await fetch(`${endpoint}/albums`);
   const data = response.json();
   return data;
 }
 
-async function readTracks() {
+export async function readTracks() {
   const response = await fetch(`${endpoint}/tracks`);
   const data = response.json();
   return data;
@@ -24,11 +26,11 @@ async function readTracks() {
 
 async function updateArtistsGrid() {
   const artists = await readArtists();
-  showArtists(artists);
+  artistList.render();
   const albums = await readAlbums();
-  showAlbums(albums);
+  albumList.render();
   const tracks = await readTracks();
-  showTracks(tracks);
+  trackList.render();
 }
 
 async function searchBackend(query) {

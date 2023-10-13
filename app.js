@@ -1,6 +1,8 @@
 "use strict";
 
-import { artistList, createDialog, instantiateArtists } from "./controller/artistController.js";
+import { albumList, instantiateAlbums } from "./controller/albumController.js";
+import { artistList, instantiateArtists } from "./controller/artistController.js";
+import { instantiateTracks, trackList } from "./controller/trackController.js";
 import { updateArtistsGrid, searchBackend } from "./rest.js";
 
 window.addEventListener("load", initApp);
@@ -14,55 +16,12 @@ async function initApp() {
   });
 
   await updateArtistsGrid();
-  await instantiateArtists()
+  await instantiateArtists();
+  await instantiateAlbums();
+  await instantiateTracks();
 
-  artistList.render()
-  createDialog.render()
+  artistList.render();
+  albumList.render();
+  trackList.render();
 }
 
-function showArtists(artists) {
-  document.querySelector("#artists").innerHTML = "";
-  for (const artist of artists) {
-    const html =
-      /*html*/
-      `
-      <article class="grid-item-artist">
-      <h2>${artist.name}</h2>
-      <p>Career start: ${artist.career_start}</p>
-      </article>
-    `;
-    document.querySelector("#artists").insertAdjacentHTML("beforeend", html);
-  }
-}
-
-function showAlbums(albums) {
-  document.querySelector("#albums").innerHTML = "";
-  for (const album of albums) {
-    const html =
-      /*html*/
-      `
-      <article class="grid-item-artist">
-      <h2>${album.title}</h2>
-      <p>Release date: ${album.release_date}</p>
-      </article>
-    `;
-    document.querySelector("#albums").insertAdjacentHTML("beforeend", html);
-  }
-}
-
-function showTracks(tracks) {
-  document.querySelector("#tracks").innerHTML = "";
-  for (const track of tracks) {
-    const html =
-      /*html*/
-      `
-      <article class="grid-item-artist">
-      <h2>${track.title}</h2>
-      <p>Duration: ${track.duration}</p>
-      </article>
-    `;
-    document.querySelector("#tracks").insertAdjacentHTML("beforeend", html);
-  }
-}
-
-export { showArtists, showAlbums, showTracks };
