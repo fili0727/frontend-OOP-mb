@@ -24,12 +24,13 @@ export async function readTracks() {
   return data;
 }
 
+// Er ikke sikker på at denne funktion behøves længere da alt bliver opdateret via renderer 
 async function updateArtistsGrid() {
-  const artists = await readArtists();
+  const artistsUpdated = await readArtists();
   artistList.render();
-  const albums = await readAlbums();
+  const albumsUpdated = await readAlbums();
   albumList.render();
-  const tracks = await readTracks();
+  const tracksUpdated = await readTracks();
   trackList.render();
 }
 
