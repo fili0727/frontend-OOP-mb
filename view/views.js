@@ -1,11 +1,11 @@
-import { artistList, artists, searchedArtistList } from "../controller/artistController.js";
+import { artistList, artists, instantiateArtists } from "../controller/artistController.js";
 import { searchBackend, updateArtistsGrid } from "../rest.js";
+import { ArtistRenderer } from "./artistrenderer.js";
+import { ListRenderer } from "./listrenderer.js";
 
 export function showFilter(event) {
     const filterValue = event.target.value;
     const searchQuery = document.querySelector("#searchbar").value;
-
-    console.log(filterValue);
 
     document.querySelector("#artists-div").classList.remove('hide');
     document.querySelector("#tracks-div").classList.remove('hide');
@@ -30,16 +30,17 @@ export function showFilter(event) {
     } else {
         updateArtistsGrid();
     }
+
 }
 
-export function showSort(event) {
+export async function showSort(event) {
     const sortValue = event.target.value;
 
-    if (searchedArtistList.length === 0 && sortValue === 'reverse') {
-        artists.sort((a, b) => b.name.localeCompare(a.name));
-        artistList.render();
-    } else if (searchedArtistList.length === 0 && sortValue === 'default') {
+    if (sortValue === 'default') {
         artists.sort((a, b) => a.name.localeCompare(b.name));
+        artistList.render();
+    } else if (sortValue === 'reverse') {
+        artists.sort((a, b) => b.name.localeCompare(a.name));
         artistList.render();
     }
 }

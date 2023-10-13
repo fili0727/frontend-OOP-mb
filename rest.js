@@ -79,4 +79,5 @@ export function updateSearchResults(artists, tracks, albums) {
     document.querySelector("#albums-list").innerHTML = `<h3>NO ALBUMS FOUND</h3>`;
   }
 }
+
 export { updateArtistsGrid, searchBackend };
