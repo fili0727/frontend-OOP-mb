@@ -24,7 +24,7 @@ export async function readTracks() {
   return data;
 }
 
-async function updateArtistsGrid() {
+async function updateGrid() {
   artistList.render();
   albumList.render();
   trackList.render();
@@ -53,7 +53,7 @@ async function searchBackend(query) {
 
     updateSearchResults(searchedArtistList, searchedTrackList, searchedAlbumList);
   } else {
-    updateArtistsGrid();
+    updateGrid();
   }
 }
 
@@ -80,4 +80,4 @@ export function updateSearchResults(artists, tracks, albums) {
   }
 }
 
-export { updateArtistsGrid, searchBackend };
+export { updateGrid, searchBackend };

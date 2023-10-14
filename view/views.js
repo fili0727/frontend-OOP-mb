@@ -1,7 +1,8 @@
-import { artistList, artists, instantiateArtists } from "../controller/artistController.js";
-import { searchBackend, updateArtistsGrid } from "../rest.js";
-import { ArtistRenderer } from "./artistrenderer.js";
-import { ListRenderer } from "./listrenderer.js";
+import { albums } from "../controller/albumController.js";
+import { artists } from "../controller/artistController.js";
+import { tracks } from "../controller/trackController.js";
+import { searchBackend, updateGrid } from "../rest.js";
+
 
 export function showFilter(event) {
     const filterValue = event.target.value;
@@ -28,7 +29,7 @@ export function showFilter(event) {
     if (searchQuery !== '') {
         searchBackend(searchQuery);
     } else {
-        updateArtistsGrid();
+        updateGrid();
     }
 
 }
@@ -38,9 +39,14 @@ export async function showSort(event) {
 
     if (sortValue === 'default') {
         artists.sort((a, b) => a.name.localeCompare(b.name));
-        artistList.render();
+        tracks.sort((a, b) => a.title.localeCompare(b.title));
+        albums.sort((a, b) => a.title.localeCompare(b.title));
+        updateGrid();
+
     } else if (sortValue === 'reverse') {
         artists.sort((a, b) => b.name.localeCompare(a.name));
-        artistList.render();
+        tracks.sort((a, b) => b.title.localeCompare(a.title));
+        albums.sort((a, b) => b.title.localeCompare(a.title));
+        updateGrid();
     }
 }

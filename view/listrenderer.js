@@ -1,12 +1,10 @@
+import { DetailDialog } from "../model/detailDialog.js";
+
 export class ListRenderer {
     constructor(container, itemRenderer, list) {
         this.container = document.querySelector(`#${container}`);
         this.itemRenderer = itemRenderer;
         this.list = list;
-    }
-
-    open() {
-        createDialog.show();
     }
 
     render() {
@@ -20,7 +18,10 @@ export class ListRenderer {
             const element = this.container.lastElementChild;
 
             element.addEventListener('click', () => {
+                const ArtistDetailDialog = new DetailDialog('detail-dialog', item);
                 console.log(item);
+                ArtistDetailDialog.render();
+                ArtistDetailDialog.showDialog();
             });
         });
 
