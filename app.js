@@ -1,6 +1,8 @@
 "use strict";
 
-import { updateArtistsGrid, searchBackend } from "./rest.js";
+import { updateArtistsGrid, readOneArtist, searchBackend } from "./rest.js";
+import Dialog from "./view/infoDialog.js";
+
 
 window.addEventListener("load", initApp);
 
@@ -11,20 +13,22 @@ async function initApp() {
     const query = searchInput.value;
     searchBackend(query);
   });
-
+    initializeActionButtons();
   await updateArtistsGrid();
 }
+
+
 
 function showArtists(artists) {
   document.querySelector("#artists").innerHTML = "";
   for (const artist of artists) {
     const html =
-      /*html*/
-      `
-      <article class="grid-item-artist">
-      <h2>${artist.name}</h2>
-      <p>Career start: ${artist.career_start}</p>
-      </article>
+    /*html*/
+    `
+    <article class="grid-item-artist" data-artist-id="${artist.id}">
+    <h2>${artist.name}</h2>
+    <p>Career start: ${artist.career_start}</p>
+    </article>
     `;
     document.querySelector("#artists").insertAdjacentHTML("beforeend", html);
   }
@@ -58,6 +62,33 @@ function showTracks(tracks) {
     `;
     document.querySelector("#tracks").insertAdjacentHTML("beforeend", html);
   }
+}
+
+function initializeActionButtons() {
+  document.querySelector("#artists").addEventListener("click", (e) => {
+    if (e.target.classList.contains("grid-item-artist")) {
+      // Check if the clicked element has the "grid-item-artist" class
+      showInfoDialog(e);
+    }
+  });}
+  
+async function showInfoDialog(e) {
+  const artistGridItem = e.target.closest(".grid-item-artist");
+  if (artistGridItem) {
+    const artistId = artistGridItem.getAttribute("data-artist-id");
+    try { 
+    const artistInfo = await readOneArtist(artistId); 
+    
+    // Populate the dialog with artistInfo
+    const infoDialog = new Dialog("info-dialog");
+    infoDialog.render(artistInfo[0]);
+    console.log(artistInfo);
+    infoDialog.show();
+  }
+  catch (error){
+    console.error(error.message);
+  }
+}
 }
 
 export { showArtists, showAlbums, showTracks };

@@ -4,11 +4,17 @@ import { showArtists, showAlbums, showTracks } from "./app.js";
 
 const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 
-async function readArtists() {
+ async function readArtists() {
   const response = await fetch(`${endpoint}/artists`);
   const data = response.json();
   return data;
 }
+export async function readOneArtist(id) {
+  const response = await fetch(`${endpoint}/artists/${id}`);
+  const data = response.json();
+  return data;
+}
+
 
 async function readAlbums() {
   const response = await fetch(`${endpoint}/albums`);
