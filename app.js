@@ -2,7 +2,7 @@
 
 import { albumList, instantiateAlbums } from "./controller/albumController.js";
 import { artistList, instantiateArtists } from "./controller/artistController.js";
-import { instantiateTracks, trackList } from "./controller/trackController.js";
+import { instantiateTracks, trackList, tracks } from "./controller/trackController.js";
 import { InitializeFilterInput, InitializeSearchInput, InititializeSortInput } from "./eventlisteners.js";
 import { updateGrid } from "./rest.js";
 
@@ -12,10 +12,10 @@ async function initApp() {
   console.log("JS kører");
 
   await updateGrid();
-
+  await instantiateTracks();
   await instantiateArtists();
   await instantiateAlbums();
-  await instantiateTracks();
+
 
   InitializeSearchInput();
   InitializeFilterInput();
@@ -24,5 +24,6 @@ async function initApp() {
   artistList.render();
   albumList.render();
   trackList.render();
+
 }
 

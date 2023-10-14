@@ -1,7 +1,9 @@
 export default class Album {
   constructor(obj) {
+    this.id = obj.id;
     this.title = obj.title;
     this.release_date = obj.release_date;
+    this.tracks = obj.tracks;
   }
 
   getAlbumTitle() {
@@ -14,5 +16,9 @@ export default class Album {
 
   getClassName() {
     return 'Album';
+  }
+
+  getTrackIds() {
+    return this.tracks.map(track => track);
   }
 }

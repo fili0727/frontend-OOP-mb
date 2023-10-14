@@ -16,13 +16,13 @@ export class ListRenderer {
             this.container.insertAdjacentHTML('beforeend', html);
 
             const element = this.container.lastElementChild;
-
-            element.addEventListener('click', () => {
-                const ArtistDetailDialog = new DetailDialog('detail-dialog', item);
-                console.log(item);
-                ArtistDetailDialog.render();
-                ArtistDetailDialog.showDialog();
-            });
+            if (item.getClassName() === 'Artist') {
+                element.addEventListener('click', () => {
+                    const ArtistDetailDialog = new DetailDialog('detail-dialog', item);
+                    ArtistDetailDialog.render();
+                    ArtistDetailDialog.showDialog();
+                });
+            }
         });
 
     }

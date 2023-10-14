@@ -5,6 +5,7 @@ import { ListRenderer } from "../view/listrenderer.js";
 
 export const artists = [];
 export const searchedArtistList = [];
+export const artistTracksId = [];
 
 export const artistList = new ListRenderer('artists-list', new ArtistRenderer(), artists);
 export const updatedArtistList = new ListRenderer('artists-list', new ArtistRenderer(), searchedArtistList);

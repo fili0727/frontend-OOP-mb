@@ -1,7 +1,7 @@
 import Track from "../model/track.js";
 import { readTracks } from "../rest.js";
-import { ListRenderer } from "../view/listrenderer.js";
 import { TrackRenderer } from "../view/trackrenderer.js";
+import { ListRenderer } from "../view/listrenderer.js";
 
 export const tracks = [];
 export const searchedTrackList = [];
@@ -16,3 +16,4 @@ export async function instantiateTracks() {
         tracks.push(track);
     }
 }
+
