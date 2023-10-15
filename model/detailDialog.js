@@ -38,13 +38,17 @@ export class DetailDialog {
                 </ul>
                 <h3>Appears on tracks:</h3>
                 <img class="detail-dialog-img" src="${this.object.img}" alt='No image'>
-                <button id='closeButton'>X</button>
+                <div class="crud-button-container">
+                <button class="crud-button clickable">Update</button>
+                <button class="crud-button clickable">Delete</button>
+                </div>
+                <button class='close-button clickable'>X</button>
             </article>
             `;
 
         this.container.insertAdjacentHTML('beforeend', html);
 
-        const closeButton = document.querySelector('#closeButton');
+        const closeButton = document.querySelector('.close-button');
         closeButton.addEventListener('click', () => {
             this.closeDialog();
         });
