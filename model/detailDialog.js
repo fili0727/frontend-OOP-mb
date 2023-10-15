@@ -1,7 +1,7 @@
 import { albums } from "../controller/albumController.js";
 
 export class DetailDialog {
-    constructor(container, object, tracks) {
+    constructor(container, object) {
         this.container = document.querySelector(`#${container}`);
         this.object = object;
     }

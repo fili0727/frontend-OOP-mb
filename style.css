@@ -60,6 +60,11 @@ p {
   border-radius: 1em;
 }
 
+.grid-item-artist:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
 .grid-item-artist-img {
   width: 150px;
   height: 150px;
@@ -120,4 +125,10 @@ p {
   right: 10px;
   cursor: pointer;
   background-color: lightskyblue;
+}
+
+/* BUTTON STYLING */
+
+.clickable:hover {
+  cursor: pointer;
 }
