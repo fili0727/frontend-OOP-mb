@@ -1,16 +1,50 @@
+import Album from "../model/album.js";
+import Artist from "../model/artist.js";
+import Track from "../model/track.js";
+
 export function addNewSubmitted(event) {
     event.preventDefault();
 
     const container = document.querySelector("#add-new-selected-dialog");
     const form = event.target;
 
-    const artist = {
-        name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
-        career_start: form['add-career-start-date'].value,
-        image: form['add-new-image'].value
-    };
+    if (form['add-new-image']) {
+        const artist = {
+            id: crypto.randomUUID(),
+            name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+            career_start: form['add-career-start-date'].value,
+            img: form['add-new-image'].value
+        };
 
-    console.log(artist);
+        const newArtist = new Artist(artist);
+        console.log(newArtist);
+    } else if (form['duration-input']) {
+        const track = {
+            id: crypto.randomUUID(),
+            title: form['add-track-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+            duration: form['duration-input'].value
+        };
+
+        const newTrack = new Track(track);
+
+        console.log(newTrack);
+    } else if (form['add-album-title']) {
+        const album = {
+            id: crypto.randomUUID(),
+            title: form['add-album-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+            release_date: form['add-album-date'].value
+        };
+
+        const newAlbum = new Album(album);
+
+        console.log(newAlbum);
+    }
+
+
+
+
+
+
 
     container.close();
 
