@@ -41,12 +41,6 @@ export function addNewSubmitted(event) {
         console.log(newAlbum);
     }
 
-
-
-
-
-
-
     container.close();
 
 };
