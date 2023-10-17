@@ -11,7 +11,6 @@ export function addNewSubmitted(event) {
 
     if (form['add-new-image']) {
         const artist = {
-            id: crypto.randomUUID(),
             name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             career_start: form['add-career-start-year'].value,
             img: form['add-new-image'].value
@@ -22,7 +21,6 @@ export function addNewSubmitted(event) {
 
     } else if (form['duration-input']) {
         const track = {
-            id: crypto.randomUUID(),
             title: form['add-track-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             duration: form['duration-input'].value,
             album_id: form['albums-in-addNewTracks'].value,
@@ -34,7 +32,6 @@ export function addNewSubmitted(event) {
 
     } else if (form['add-album-title']) {
         const album = {
-            id: crypto.randomUUID(),
             title: form['add-album-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             release_date: form['add-album-date'].value,
             artist_id: form['artists-in-addNewAlbum'].value
@@ -42,12 +39,6 @@ export function addNewSubmitted(event) {
 
         createAlbum(album);
     }
-
-
-
-
-
-
 
     container.close();
 

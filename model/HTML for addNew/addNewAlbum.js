@@ -19,7 +19,7 @@ export class addNewAlbumForm {
                         </div>
 
                         <div>
-                            <label for="artists-in-addNewAlbum">Add artist to track:</label>
+                            <label for="artists-in-addNewAlbum">Add artist:</label>
                             <select id="artists-in-addNewAlbum" name="artists-in-addNewAlbum">
                             <option disabled selected>Select</option>
                             ${this.generateArtistsOptions()}

@@ -46,9 +46,6 @@ export async function createTrack(track) {
     updateGrid();
 }
 export async function createAlbum(album) {
-
-    console.log(album);
-
     try {
         const response = await fetch(`${endpoint}albums`, {
             method: 'POST',
