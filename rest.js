@@ -4,7 +4,7 @@ import { albumList, albums, searchedAlbumList, updatedAlbumList } from "./contro
 import { artistList, artists, searchedArtistList, updatedArtistList } from "./controller/artistController.js";
 import { searchedTrackList, trackList, tracks, updatedTrackList } from "./controller/trackController.js";
 
-const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
+export const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 
 export async function readArtists() {
   const response = await fetch(`${endpoint}/artists`);

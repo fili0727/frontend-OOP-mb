@@ -5,7 +5,7 @@ export class addNewAlbumForm {
             <form>
                 <fieldset style="margin-bottom:5px">
                 <legend style="font-size:20px"><strong>Add new album</strong></legend>
-                <label for="album-title">Album title:</label>
+                <label for="add-album-title">Album title:</label>
                 <input type="text" id="add-album-title" name="add-album-title">
 
                 <label for="add-album-date">Release date:</label>

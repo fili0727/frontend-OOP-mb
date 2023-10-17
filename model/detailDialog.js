@@ -1,4 +1,5 @@
 import { albums } from "../controller/albumController.js";
+import { deleteArtist } from "../controller/deleteArtist.js";
 
 export class DetailDialog {
     constructor(container, object) {
@@ -40,7 +41,7 @@ export class DetailDialog {
                 <img class="detail-dialog-img" src="${this.object.img}" alt='No image'>
                 <div class="crud-button-container">
                 <button class="crud-button clickable">Update</button>
-                <button class="crud-button clickable">Delete</button>
+                <button class="crud-button clickable delete-button">Delete</button>
                 </div>
                 <button class='close-button clickable'>X</button>
             </article>
@@ -49,8 +50,17 @@ export class DetailDialog {
         this.container.insertAdjacentHTML('beforeend', html);
 
         const closeButton = document.querySelector('.close-button');
+
+        const deleteButton = document.querySelector(".delete-button");
+
         closeButton.addEventListener('click', () => {
             this.closeDialog();
         });
+
+        deleteButton.addEventListener("click", () => {
+            deleteArtist(this.object);
+        });
+
+
     }
 }
