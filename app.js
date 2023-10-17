@@ -29,7 +29,4 @@ async function initApp() {
 
 }
 
-console.log(artists);
-console.log(albums);
-console.log(tracks);
 

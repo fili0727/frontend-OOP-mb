@@ -7,6 +7,7 @@ export async function deleteArtist(artist) {
     try {
         const response = await fetch(`${endpoint}artists/${artist.id}`, {
             method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
