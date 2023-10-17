@@ -24,23 +24,23 @@ export function addNewSubmitted(event) {
         const track = {
             id: crypto.randomUUID(),
             title: form['add-track-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
-            duration: form['duration-input'].value
+            duration: form['duration-input'].value,
+            album_id: form['albums-in-addNewTracks'].value,
+            artist_id: form['artists-in-addNewTracks'].value
+
         };
 
-        const newTrack = new Track(track);
-
-        createTrack(newTrack);
+        createTrack(track);
 
     } else if (form['add-album-title']) {
         const album = {
             id: crypto.randomUUID(),
             title: form['add-album-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
-            release_date: form['add-album-date'].value
+            release_date: form['add-album-date'].value,
+            artist_id: form['artists-in-addNewAlbum'].value
         };
 
-        const newAlbum = new Album(album);
-
-        createAlbum(newAlbum);
+        createAlbum(album);
     }
 
 

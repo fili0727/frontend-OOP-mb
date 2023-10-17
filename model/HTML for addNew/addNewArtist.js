@@ -18,7 +18,7 @@ export class addNewArtistForm {
 
                     <div>
                         <label for="add-new-image">Add image url:</label>
-                        <input required type="url" id="add-new-image" name="add-new-image">
+                        <input type="url" id="add-new-image" name="add-new-image">
                         </fieldset>
                         <button class="submit-in-add-new" type="submit">Submit</button>
                         <button class="cancel-in-add-new" type="button">Cancel</button>
