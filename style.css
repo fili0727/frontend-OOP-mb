@@ -21,6 +21,7 @@ header {
   background: linear-gradient(to bottom, #5e60ce, #0077b6);
   padding: 2em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   letter-spacing: 1px;
@@ -141,4 +142,12 @@ p {
 .clickable:hover {
   cursor: pointer;
   background-color: lightgray;
+}
+
+/* ADD NEW DIALOG STYLIGN */
+
+#input-add-artist {
+  display: grid;
+  gap: 5px;
+  font-size: 14px;
 }

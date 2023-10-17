@@ -7,12 +7,15 @@
     <title>Artist overview</title>
   </head>
   <body>
-    <main>
     <header>
-      <h1>Music Database</h1>
-    </header>
+      <div>
+        <h1>Music Database</h1>
+      </div>
 
-    <button class="clickable" id="create-artist-button">Create Artist</button>
+      <div>
+        <button class="clickable" id="create-artist-button">Add new</button>
+      </div>
+    </header>
 
     <div class="filter-grid">
       <div>
@@ -23,21 +26,21 @@
           <option value="reverse">Z-A</option>
         </select>
       </div>
+
       <div>
         <label for="searchbar"></label>
         <input type="search" id="searchbar" placeholder="Search for ..." />
       </div>
-       <div>
+
+      <div>
         <label for="filter">Filter:</label>
-          <select id="filterByType" class="sort clickable">
-          <option value=""  selected>none</option>
+        <select id="filterByType" class="sort clickable">
+          <option value="" selected>none</option>
           <option value="albums">Albums</option>
           <option value="tracks">Tracks</option>
           <option value="artists">Artists</option>
         </select>
       </div>
-  
-    </div>
     </div>
 
     <div id="artists-div">
@@ -57,7 +60,31 @@
 
     <div class="dialogs">
       <dialog id="create-artist-dialog"></dialog>
+
       <dialog id="detail-dialog"></dialog>
+
+      <dialog id="add-new-dialog">
+        <form id="add-new-form" action="" method="">
+          <fieldset>
+            <legend>Choose what to add</legend>
+            <input
+              type="radio"
+              id="artist"
+              name="add-new-type"
+              value="artist"
+            />
+            <label for="artist">Artist</label>
+
+            <input type="radio" id="track" name="add-new-type" value="track" />
+            <label for="track">Track</label>
+
+            <input type="radio" id="album" name="add-new-type" value="album" />
+            <label for="artist">Album</label>
+          </fieldset>
+        </form>
+      </dialog>
+
+      <dialog id="add-new-selected-dialog"></dialog>
     </div>
   </body>
 
