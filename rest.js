@@ -24,13 +24,13 @@ export async function readTracks() {
   return data;
 }
 
-async function updateGrid() {
+export async function updateGrid() {
   artistList.render();
   albumList.render();
   trackList.render();
 }
 
-async function searchBackend(query) {
+export async function searchBackend(query) {
   if (query !== '') {
     const response = await fetch(`${endpoint}/fullAlbums/search?q=${query}`);
     const searchData = await response.json();
@@ -80,4 +80,3 @@ export function updateSearchResults(artists, tracks, albums) {
   }
 }
 
-export { updateGrid, searchBackend };

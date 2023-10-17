@@ -1,5 +1,6 @@
+import { deleteArtist } from "../controller/CRUD/delete.js";
 import { albums } from "../controller/albumController.js";
-import { deleteArtist } from "../controller/deleteArtist.js";
+
 
 export class DetailDialog {
     constructor(container, object) {
