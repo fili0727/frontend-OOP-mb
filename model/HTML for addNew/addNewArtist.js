@@ -12,8 +12,8 @@ export class addNewArtistForm {
                     </div>
 
                     <div>
-                        <label for="add-career-start-date">Career start date:</label>
-                        <input required type="date" id="add-career-start-date" name="add-career-start-date">
+                        <label for="add-career-start-date">Career start year:</label>
+                        <input required type="number" id="add-career-start-year" name="add-career-start-year" min="1900" max="2099" step="1" placeholder="YYYY">
                     </div>
 
                     <div>

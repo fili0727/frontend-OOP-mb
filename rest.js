@@ -9,6 +9,7 @@ export const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 export async function readArtists() {
   const response = await fetch(`${endpoint}/artists`);
   const data = response.json();
+  console.log(await data);
   return data;
 }
 
