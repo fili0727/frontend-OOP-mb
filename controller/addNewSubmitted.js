@@ -1,7 +1,7 @@
 import Album from "../model/album.js";
 import Artist from "../model/artist.js";
 import Track from "../model/track.js";
-import { createArtist } from "./CRUD/create.js";
+import { createAlbum, createArtist, createTrack } from "./CRUD/create.js";
 
 export function addNewSubmitted(event) {
     event.preventDefault();
@@ -19,6 +19,7 @@ export function addNewSubmitted(event) {
 
         const newArtist = new Artist(artist);
         createArtist(newArtist);
+
     } else if (form['duration-input']) {
         const track = {
             id: crypto.randomUUID(),
@@ -28,7 +29,8 @@ export function addNewSubmitted(event) {
 
         const newTrack = new Track(track);
 
-        console.log(newTrack);
+        createTrack(newTrack);
+
     } else if (form['add-album-title']) {
         const album = {
             id: crypto.randomUUID(),
@@ -38,7 +40,7 @@ export function addNewSubmitted(event) {
 
         const newAlbum = new Album(album);
 
-        console.log(newAlbum);
+        createAlbum(newAlbum);
     }
 
 
