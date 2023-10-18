@@ -59,17 +59,21 @@ export class addNewArtistForm {
                         </select>
                     </div>
 
-                        <div>
-                            <label for="add-new-image">Add image url:</label>
-                            <input type="url" id="add-new-image" name="add-new-image">
-                        </div>
+                    <div>
+                        <label for="add-new-image">Add image url:</label>
+                        <input type="url" id="add-new-image" name="add-new-image">
                     </div>
+
+                    <div>
+                        <label for="add-album-date-addNewArtist">Release date:</label>
+                        <input type="date" id="add-album-date-addNewArtist" name="add-album-date-addNewArtist">
+                    </div>
+                </div>
                 </fieldset>
                         <button class="submit-in-add-new" type="submit">Submit</button>
                         <button class="cancel-in-add-new" type="button">Cancel</button>
             </form>
             `;
-        // { album_title: string, album_release_date: string, artist_name: string, artist_career_start: string, tracks_title: [string], tracks_duration: [time]; }
 
         return html;
     }

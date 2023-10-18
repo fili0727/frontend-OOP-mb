@@ -6,11 +6,15 @@ export function addNewSubmitted(event) {
     const container = document.querySelector("#add-new-selected-dialog");
     const form = event.target;
 
+    // { album_title: string, album_release_date: string, artist_name: string, artist_career_start: string, tracks_title: [string], tracks_duration: [time]; }
+
     if (form['add-new-image']) {
         const artist = {
             name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             career_start: form['add-career-start-year'].value,
-            img: form['add-new-image'].value
+            img: form['add-new-image'].value,
+            tracks_title: [],
+            tracks_duration: []
         };
 
         createArtist(artist);
