@@ -11,7 +11,7 @@ export function addNewSubmitted(event) {
             artist_name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             artist_career_start: form['add-career-start-year'].value,
             img: form['add-new-image'].value,
-            album_title: form['add-album-title-newArtist'].value,
+            album_title: form['add-album-title-newArtist'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             album_release_date: form['add-album-date-newArtist'].value,
             tracks: [
                 {
