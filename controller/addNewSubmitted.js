@@ -1,6 +1,3 @@
-import Album from "../model/album.js";
-import Artist from "../model/artist.js";
-import Track from "../model/track.js";
 import { createAlbum, createArtist, createTrack } from "./CRUD/create.js";
 
 export function addNewSubmitted(event) {
@@ -16,8 +13,7 @@ export function addNewSubmitted(event) {
             img: form['add-new-image'].value
         };
 
-        const newArtist = new Artist(artist);
-        createArtist(newArtist);
+        createArtist(artist);
 
     } else if (form['duration-input']) {
         const track = {
@@ -41,6 +37,5 @@ export function addNewSubmitted(event) {
     }
 
     container.close();
-
 };
 

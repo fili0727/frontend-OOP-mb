@@ -20,7 +20,7 @@ export class addNewTrackForm {
                     </div>
 
                     <div>
-                        <label for="albums-in-addNewTracks">Add track to album:</label>
+                        <label for="albums-in-addNewTracks">Add  to album:</label>
                         <select id="albums-in-addNewTracks" name="albums-in-addNewTracks">
                         <option disabled selected>Select</option>
                         ${this.generateAlbumsOptions()}
@@ -28,7 +28,7 @@ export class addNewTrackForm {
                     </div>
 
                     <div>
-                        <label for="artists-in-addNewTracks">Add artist to track:</label>
+                        <label for="artists-in-addNewTracks">Add artist:</label>
                         <select id="artists-in-addNewTracks" name="artists-in-addNewTracks">
                         <option disabled selected>Select</option>
                         ${this.generateArtistsOptions()}

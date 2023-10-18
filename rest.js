@@ -6,6 +6,8 @@ import { searchedTrackList, trackList, tracks, updatedTrackList } from "./contro
 
 export const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 
+export const tracksForArtist = [];
+
 export async function readArtists() {
   const response = await fetch(`${endpoint}/artists`);
   const data = response.json();
@@ -20,7 +22,12 @@ export async function readAlbums() {
 
 export async function readTracks() {
   const response = await fetch(`${endpoint}/tracks`);
-  const data = response.json();
+  const data = await response.json();
+
+  data.forEach(track => {
+    tracksForArtist.push(track);
+  });
+
   return data;
 }
 

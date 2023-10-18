@@ -18,9 +18,21 @@ export class ListRenderer {
             const element = this.container.lastElementChild;
             if (item.getClassName() === 'Artist') {
                 element.addEventListener('click', () => {
+                    console.log(item);
                     const ArtistDetailDialog = new DetailDialog('detail-dialog', item);
                     ArtistDetailDialog.render();
                     ArtistDetailDialog.showDialog();
+                });
+            }
+
+            if (item.getClassName() === 'Track') {
+                element.addEventListener('click', () => {
+                    console.log(item);
+                });
+            }
+            if (item.getClassName() === 'Album') {
+                element.addEventListener('click', () => {
+                    console.log(item);
                 });
             }
         });
