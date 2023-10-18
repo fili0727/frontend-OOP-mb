@@ -15,11 +15,11 @@ export function addNewSubmitted(event) {
             album_release_date: form['add-album-date-newArtist'].value,
             tracks: [
                 {
-                    "title": form['add-track-title-newArtist1'].value,
+                    "title": form['add-track-title-newArtist1'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
                     "duration": form['duration-input-newArtist1'].value
                 },
                 {
-                    "title": form['add-track-title-newArtist2'].value,
+                    "title": form['add-track-title-newArtist2'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
                     "duration": form['duration-input-newArtist2'].value
                 }
             ]
