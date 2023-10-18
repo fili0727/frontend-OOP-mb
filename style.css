@@ -148,7 +148,7 @@ p {
 
 #input-add-artist {
   display: grid;
-  gap: 5px;
+  gap: 10px;
   font-size: 14px;
 }
 
@@ -161,5 +161,17 @@ p {
 #input-in-addNewAlbum {
   display: grid;
   gap: 5px;
+  font-size: 14px;
+}
+
+#input-musicData-addArtist {
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+}
+
+#addTracks-newArtist {
+  display: grid;
+  gap: 10px;
   font-size: 14px;
 }

@@ -1,6 +1,6 @@
 import { deleteArtist } from "../controller/CRUD/delete.js";
 import { albums } from "../controller/albumController.js";
-import { readTracks, tracksForArtist } from "../rest.js";
+import { tracksForArtist } from "../rest.js";
 import Track from "./track.js";
 
 
