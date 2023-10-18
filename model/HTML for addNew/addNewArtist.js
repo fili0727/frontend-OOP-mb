@@ -39,29 +39,31 @@ export class addNewArtistForm {
                         </div>
 
                         <fieldset>
+                            <legend style="font-size:16px"><strong>Track 1:</strong></legend>
                             <div id="addTracks-newArtist">
                                 <div>
-                                    <label for="track-title">Track title:</label>
-                                    <input type="text" id="add-track-title" name="add-track-title">
+                                    <label for="add-track-title-newArtist1">Track title:</label>
+                                    <input type="text" id="add-track-title-newArtist1" name="add-track-title-newArtist1">
                                 </div>
 
                                 <div>
-                                    <label for="duration-input">Track duration:</label>
-                                    <input id="duration-input" type="text" required pattern="([0-5][0-9]):[0-5][0-9]:[0-5][0-9]" placeholder="Format like 00:00:00">
+                                    <label for="duration-input-newArtist1">Track duration:</label>
+                                    <input id="duration-input-newArtist1" type="text" required pattern="([0-5][0-9]):[0-5][0-9]:[0-5][0-9]" placeholder="Format like 00:00:00">
                                 </div>
                             </div>
                         </fieldset>
 
-                                                <fieldset>
+                        <fieldset>
+                            <legend style="font-size:16px"><strong>Track 2:</strong></legend>
                             <div id="addTracks-newArtist">
                                 <div>
-                                    <label for="track-title">Track title:</label>
-                                    <input type="text" id="add-track-title" name="add-track-title">
+                                    <label for="add-track-title-newArtist2">Track title:</label>
+                                    <input type="text" id="add-track-title-newArtist2" name="add-track-title-newArtist2">
                                 </div>
 
                                 <div>
-                                    <label for="duration-input">Track duration:</label>
-                                    <input id="duration-input" type="text" required pattern="([0-5][0-9]):[0-5][0-9]:[0-5][0-9]" placeholder="Format like 00:00:00">
+                                    <label for="duration-input-newArtist2">Track duration:</label>
+                                    <input id="duration-input-newArtist2" type="text" required pattern="([0-5][0-9]):[0-5][0-9]:[0-5][0-9]" placeholder="Format like 00:00:00">
                                 </div>
                             </div>
                         </fieldset>
