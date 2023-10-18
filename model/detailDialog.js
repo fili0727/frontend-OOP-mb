@@ -40,7 +40,6 @@ export class DetailDialog {
 
         const trackIds = [];
         const artistTracks = [];
-        const tracks = [...artistTracks];
 
         artistAlbums.forEach(album => album.tracks.forEach(track => trackIds.push(track)));
 

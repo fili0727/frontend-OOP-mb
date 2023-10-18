@@ -17,7 +17,8 @@ export function addNewSubmitted(event) {
             tracks_duration: []
         };
 
-        createArtist(artist);
+        console.log(artist);
+        // createArtist(artist);
 
     } else if (form['duration-input']) {
         const track = {
@@ -28,7 +29,8 @@ export function addNewSubmitted(event) {
 
         };
 
-        createTrack(track);
+        console.log(track);
+        // createTrack(track);
 
     } else if (form['add-album-title']) {
         const album = {
@@ -37,7 +39,8 @@ export function addNewSubmitted(event) {
             artist_id: form['artists-in-addNewAlbum'].value
         };
 
-        createAlbum(album);
+        console.log(album);
+        // createAlbum(album);
     }
 
     container.close();
