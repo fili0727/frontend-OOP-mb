@@ -20,58 +20,14 @@ export class addNewArtistForm {
                         </div>
 
                         <div>
-                            <label for="tracks-in-addNewArtist">Add track:</label>
-                            <select id="tracks-in-addNewArtist" name="tracks-in-addNewArtist">
-                            <option disabled selected>Select</option>
-                            ${this.generateTrackOptions()}
-                            </select>
+                            <label for="add-new-image">Add image url:</label>
+                            <input type="url" id="add-new-image" name="add-new-image">
                         </div>
 
-                        <div>
-                            <label for="tracks-in-addNewArtist">Add track:</label>
-                            <select id="tracks-in-addNewArtist" name="tracks-in-addNewArtist">
-                            <option disabled selected>Select</option>
-                            ${this.generateTrackOptions()}
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="tracks-in-addNewArtist">Add track:</label>
-                            <select id="tracks-in-addNewArtist" name="tracks-in-addNewArtist">
-                            <option disabled selected>Select</option>
-                            ${this.generateTrackOptions()}
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="tracks-in-addNewArtist">Add track:</label>
-                            <select id="tracks-in-addNewArtist" name="tracks-in-addNewArtist">
-                            <option disabled selected>Select</option>
-                            ${this.generateTrackOptions()}
-                            </select>
-                        </div>
-
-                        <div>
-                        <label for="albums-in-addNewTracks">Add  to album:</label>
-                        <select id="albums-in-addNewTracks" name="albums-in-addNewTracks">
-                        <option disabled selected>Select</option>
-                        ${this.generateAlbumsOptions()}
-                        </select>
                     </div>
-
-                    <div>
-                        <label for="add-new-image">Add image url:</label>
-                        <input type="url" id="add-new-image" name="add-new-image">
-                    </div>
-
-                    <div>
-                        <label for="add-album-date-addNewArtist">Release date:</label>
-                        <input type="date" id="add-album-date-addNewArtist" name="add-album-date-addNewArtist">
-                    </div>
-                </div>
                 </fieldset>
-                        <button class="submit-in-add-new" type="submit">Submit</button>
-                        <button class="cancel-in-add-new" type="button">Cancel</button>
+                <button class="submit-in-add-new" type="submit">Submit</button>
+                <button class="cancel-in-add-new" type="button">Cancel</button>
             </form>
             `;
 

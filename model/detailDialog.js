@@ -40,6 +40,8 @@ export class DetailDialog {
 
         const trackIds = [];
         const artistTracks = [];
+        const tracks = [];
+
 
         artistAlbums.forEach(album => album.tracks.forEach(track => trackIds.push(track)));
 
@@ -50,7 +52,11 @@ export class DetailDialog {
             }
         });
 
-        console.log(artistTracks);
+        for (let i = 0; i < artistTracks.length; i++) {
+            for (let j = 0; j < artistTracks[i].length; j++) {
+                tracks.push(artistTracks[i][j]);
+            }
+        }
 
         const html = /*html*/
             `<article class="dialog-item">
@@ -64,9 +70,14 @@ export class DetailDialog {
                     </li>`).join('')}
                 </ul>
                 <h3>Appears on tracks:</h3>
+                <ul>
+                    ${tracks.map(track => `<li>
+                        ${track.title}
+                    </li>`).join('')}
+                </ul>
                 <img class="detail-dialog-img" src="${this.object.img}" alt='No image'>
                 <div class="crud-button-container">
-                <button class="crud-button clickable">Update</button>
+                <button class="crud-button clickable update-button">Update</button>
                 <button class="crud-button clickable delete-button">Delete</button>
                 </div>
                 <button class='close-button clickable'>X</button>
@@ -86,7 +97,6 @@ export class DetailDialog {
         deleteButton.addEventListener("click", () => {
             deleteArtist(this.object);
         });
-
 
     }
 }

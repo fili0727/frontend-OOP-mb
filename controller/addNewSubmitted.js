@@ -13,8 +13,6 @@ export function addNewSubmitted(event) {
             name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             career_start: form['add-career-start-year'].value,
             img: form['add-new-image'].value,
-            tracks_title: [],
-            tracks_duration: []
         };
 
         console.log(artist);
@@ -29,18 +27,16 @@ export function addNewSubmitted(event) {
 
         };
 
-        console.log(track);
-        // createTrack(track);
+        createTrack(track);
 
     } else if (form['add-album-title']) {
         const album = {
             title: form['add-album-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             release_date: form['add-album-date'].value,
-            artist_id: form['artists-in-addNewAlbum'].value
+            artist_id: Number(form['artists-in-addNewAlbum'].value)
         };
 
-        console.log(album);
-        // createAlbum(album);
+        createAlbum(album);
     }
 
     container.close();
