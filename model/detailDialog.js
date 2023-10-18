@@ -1,5 +1,7 @@
 import { deleteArtist } from "../controller/CRUD/delete.js";
 import { albums } from "../controller/albumController.js";
+import { readTracks, tracksForArtist } from "../rest.js";
+import Track from "./track.js";
 
 
 export class DetailDialog {
@@ -20,12 +22,36 @@ export class DetailDialog {
         this.container.innerHTML = '';
     }
 
+    getTracks() {
+        const tracks = [];
+
+        for (const data of tracksForArtist) {
+            const track = new Track(data);
+            tracks.push(track);
+        }
+        return tracks;
+    }
+
     render() {
         this.clearDialog();
 
         const albumIds = this.object.albums;
         const artistAlbums = albumIds.map(albumId => albums.find(album => albumId === album.id));
-        const trackIds = artistAlbums.map(album => album.tracks);
+
+        const trackIds = [];
+        const artistTracks = [];
+        const tracks = [...artistTracks];
+
+        artistAlbums.forEach(album => album.tracks.forEach(track => trackIds.push(track)));
+
+        trackIds.forEach(trackId => {
+            const found = this.getTracks().filter(track => track.id === trackId);
+            if (found) {
+                artistTracks.push(found);
+            }
+        });
+
+        console.log(artistTracks);
 
         const html = /*html*/
             `<article class="dialog-item">

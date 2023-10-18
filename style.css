@@ -151,3 +151,15 @@ p {
   gap: 5px;
   font-size: 14px;
 }
+
+#input-in-addNewTrack {
+  display: grid;
+  gap: 5px;
+  font-size: 14px;
+}
+
+#input-in-addNewAlbum {
+  display: grid;
+  gap: 5px;
+  font-size: 14px;
+}
