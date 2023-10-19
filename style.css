@@ -81,11 +81,17 @@ p {
   text-align: center;
 }
 /* Option grid */
-#registerBtn {
+.optionBtn {
   display: flex;
   height: 2rem;
   padding: 0.75rem 1.9375rem 0.6875rem 1.0625rem;
   align-items: center;
+}
+#registerBtn {
+  margin-left: 5px;
+  border-radius: 0.25rem;
+  border: 2px solid #000;
+  background: #666cff;
 }
 /* SEARCH */
 .option-grid {
