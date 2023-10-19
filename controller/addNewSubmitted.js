@@ -6,6 +6,15 @@ export function addNewSubmitted(event) {
     const container = document.querySelector("#add-new-selected-dialog");
     const form = event.target;
 
+    const testFullAlbumObject = {
+        artist_name: 'testguy',
+        artist_career_start: 2002,
+        img: 'https://imageio.forbes.com/specials-images/imageserve/5ed578988b3c370006234c35/0x0.jpg?format=jpg&crop=1031,1031,x43,y49,safe&height=416&width=416&fit=bounds',
+        album_title: 'testtitle',
+        tracks: ['testtrack1, testtrack2, testtrack3'],
+        tracks_duration: ['00:01:00', '00:02:00', '00:03:00']
+    };
+
     if (form['add-new-image']) {
         const artist = {
             artist_name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
@@ -27,7 +36,7 @@ export function addNewSubmitted(event) {
 
         console.log(artist);
 
-        // createArtist(artist);
+        // createArtist(test);
 
     } else if (form['duration-input']) {
         const track = {
