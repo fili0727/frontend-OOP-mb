@@ -19,6 +19,7 @@
         <label for="searchbar"></label>
         <input type="search" id="searchbar" placeholder="Search for ..." />
       </div>
+      <!-- Selected button should have optionSelected class -->
       <button id="artistsBtn" class="optionBtn">Artists</button>
       <button id="albumsBtn" class="optionBtn">Albums</button>
       <button id="tracksBtn" class="optionBtn">Tracks</button>
@@ -31,9 +32,9 @@
           <option value="artist">Artists</option>
         </select>
       </div> -->
-      <div >
-        <label for="sort">Sort:</label>
-        <select id="sortBy" class="sort">
+      <div id="sortGrid">
+        <label for="sort">Sort: </label>
+        <select id="sortBy"  class="sort optionBtn">
           <option value="default" selected>A-Z</option>
           <option value="reverse">Z-A</option>
         </select>
