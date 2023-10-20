@@ -1,7 +1,9 @@
 import { deleteArtist } from "../controller/CRUD/delete.js";
+import { updateArtist } from "../controller/CRUD/update.js";
 import { albums } from "../controller/albumController.js";
 import { readTracks, tracksForArtist } from "../rest.js";
 import Track from "./track.js";
+import { updateArtist } from "../controller/CRUD/update.js";
 
 export class DetailDialog {
   constructor(container, object) {
