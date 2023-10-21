@@ -1,6 +1,6 @@
 import { deleteArtist } from "../controller/CRUD/delete.js";
 import { albums } from "../controller/albumController.js";
-import { readTracks, tracksForArtist } from "../rest.js";
+import { tracksForArtist } from "../rest.js";
 import Track from "./track.js";
 import { updateArtistForm } from "./HTML for addNew/updateArtist.js";
 
@@ -48,6 +48,7 @@ export class DetailDialog {
 
     const trackIds = [];
     const artistTracks = [];
+    const tracks = [];
 
     artistAlbums.forEach(album =>
       album.tracks.forEach(track => trackIds.push(track))
@@ -60,7 +61,11 @@ export class DetailDialog {
       }
     });
 
-    console.log(artistTracks);
+    for (let i = 0; i < artistTracks.length; i++) {
+      for (let j = 0; j < artistTracks[i].length; j++) {
+        tracks.push(artistTracks[i][j]);
+      }
+    }
 
     const html =
       /*html*/
@@ -79,6 +84,15 @@ export class DetailDialog {
                       .join("")}
                 </ul>
                 <h3>Appears on tracks:</h3>
+                <ul>
+                    ${tracks
+                      .map(
+                        track => `<li>
+                        ${track.title}
+                    </li>`
+                      )
+                      .join("")}
+                </ul>
                 <img class="detail-dialog-img" src="${
                   this.object.img
                 }" alt='No image'>

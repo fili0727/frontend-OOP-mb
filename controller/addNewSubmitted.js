@@ -6,19 +6,37 @@ export function addNewSubmitted(event) {
     const container = document.querySelector("#add-new-selected-dialog");
     const form = event.target;
 
-    // { album_title: string, album_release_date: string, artist_name: string, artist_career_start: string, tracks_title: [string], tracks_duration: [time]; }
+    const testFullAlbumObject = {
+        artist_name: 'testguy',
+        artist_career_start: 2002,
+        img: 'https://imageio.forbes.com/specials-images/imageserve/5ed578988b3c370006234c35/0x0.jpg?format=jpg&crop=1031,1031,x43,y49,safe&height=416&width=416&fit=bounds',
+        album_title: 'testtitle',
+        tracks: ['testtrack1, testtrack2, testtrack3'],
+        tracks_duration: ['00:01:00', '00:02:00', '00:03:00']
+    };
 
     if (form['add-new-image']) {
         const artist = {
-            name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
-            career_start: form['add-career-start-year'].value,
+            artist_name: form['add-artist-name'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+            artist_career_start: form['add-career-start-year'].value,
             img: form['add-new-image'].value,
-            tracks_title: [],
-            tracks_duration: []
+            album_title: form['add-album-title-newArtist'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+            album_release_date: form['add-album-date-newArtist'].value,
+            tracks: [
+                {
+                    "title": form['add-track-title-newArtist1'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+                    "duration": form['duration-input-newArtist1'].value
+                },
+                {
+                    "title": form['add-track-title-newArtist2'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
+                    "duration": form['duration-input-newArtist2'].value
+                }
+            ]
         };
 
         console.log(artist);
-        // createArtist(artist);
+
+        // createArtist(test);
 
     } else if (form['duration-input']) {
         const track = {
@@ -29,18 +47,16 @@ export function addNewSubmitted(event) {
 
         };
 
-        console.log(track);
-        // createTrack(track);
+        createTrack(track);
 
     } else if (form['add-album-title']) {
         const album = {
             title: form['add-album-title'].value.split(' ').map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()).join(' '),
             release_date: form['add-album-date'].value,
-            artist_id: form['artists-in-addNewAlbum'].value
+            artist_id: Number(form['artists-in-addNewAlbum'].value)
         };
 
-        console.log(album);
-        // createAlbum(album);
+        createAlbum(album);
     }
 
     container.close();

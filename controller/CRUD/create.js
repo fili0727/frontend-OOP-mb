@@ -5,7 +5,7 @@ export async function createArtist(artist) {
     console.log(artist);
 
     try {
-        const response = await fetch(`${endpoint}artists`, {
+        const response = await fetch(`${endpoint}fullAlbums`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(artist)

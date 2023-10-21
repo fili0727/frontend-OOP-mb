@@ -1,8 +1,9 @@
 import { endpoint, updateGrid } from "../../rest.js";
 
 export async function deleteArtist(artist) {
+    const container = document.querySelector("#detail-dialog");
 
-    console.log(artist);
+    console.log(`artist deleted: ${artist}`);
 
     try {
         const response = await fetch(`${endpoint}artists/${artist.id}`, {
@@ -18,6 +19,8 @@ export async function deleteArtist(artist) {
             console.log({ message: errorData });
         }
     } catch (error) { console.log(error); }
+
+    container.close();
 
     updateGrid();
 }
