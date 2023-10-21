@@ -1,4 +1,4 @@
-Link til backend repository: https://github.com/MaxusTheOne/full-stack-artist-app-backend
+Link til backend repository: https://github.com/MaxusTheOne/full-stack-artist-app-backend/tree/OOP-project
 
 Link til azure deployment: https://mabi-testdata-01.azurewebsites.net/
 
