@@ -1,14 +1,19 @@
 import { deleteArtist } from "../controller/CRUD/delete.js";
-import { updateArtist } from "../controller/CRUD/update.js";
 import { albums } from "../controller/albumController.js";
 import { readTracks, tracksForArtist } from "../rest.js";
 import Track from "./track.js";
-import { updateArtist } from "../controller/CRUD/update.js";
+import { updateArtistForm } from "./HTML for addNew/updateArtist.js";
 
 export class DetailDialog {
   constructor(container, object) {
     this.container = document.querySelector(`#${container}`);
     this.object = object;
+    this.updateForm = new updateArtistForm(
+      this.object.id,
+      this.object.name,
+      this.object.career_start,
+      this.object.img
+    );
   }
 
   showDialog() {
@@ -102,9 +107,13 @@ export class DetailDialog {
     });
 
     updateButton.addEventListener("click", () => {
-      console.log(this.object);
+      this.closeDialog();
+      this.updateForm.clearDialog();
+      this.updateForm.selector.insertAdjacentHTML(
+        "beforeend",
+        this.updateForm.render()
+      );
+      this.updateForm.showDialog();
     });
-
-    // updatedArtist(this.object))
   }
 }
