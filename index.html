@@ -8,39 +8,39 @@
   </head>
   <body>
     <header>
-      <div>
-        <h1>Music Database</h1>
-      </div>
-
-      <div>
-        <button class="clickable" id="create-artist-button">Add new</button>
-      </div>
+      <img src="Vinyl.png" alt="Vinyl">
+      <h1>Music Database</h1>
     </header>
 
-    <div class="filter-grid">
-      <div>
-        <label for="sort">Sort:</label>
-        <select id="sortBy" class="sort clickable">
-          <option selected disabled>select</option>
-          <option value="default">A-Z</option>
-          <option value="reverse">Z-A</option>
-        </select>
-      </div>
-
+    <div class="option-grid">
+      <!-- prob change id to create-artist-button -->
+      <button id="create-artist-button" class="optionBtn clickable">Register..</button>
       <div>
         <label for="searchbar"></label>
         <input type="search" id="searchbar" placeholder="Search for ..." />
       </div>
-
-      <div>
+      <!-- Selected button should have optionSelected class -->
+      <button id="artistsBtn" class="optionBtn" value="artists">Artists</button>
+      <button id="albumsBtn" class="optionBtn" value="albums">Albums</button>
+      <button id="tracksBtn" class="optionBtn" value="tracks">Tracks</button>
+      <!-- <div>
         <label for="filter">Filter:</label>
-        <select id="filterByType" class="sort clickable">
-          <option value="" selected>none</option>
+        <select id="filterByType" class="sort">
+          <option value="" selected>Type</option>
           <option value="albums">Albums</option>
           <option value="tracks">Tracks</option>
           <option value="artists">Artists</option>
         </select>
+      </div> -->
+      <div id="sortGrid">
+        <label for="sort">Sort: </label>
+        <select id="sortBy"  class="sort optionBtn">
+          <option value="default" selected>A-Z</option>
+          <option value="reverse">Z-A</option>
+        </select>
       </div>
+  
+    </div>
     </div>
 
     <div id="artists-div">
@@ -85,6 +85,8 @@
       </dialog>
 
       <dialog id="add-new-selected-dialog"></dialog>
+
+      <dialog id="dialog-update-artist"></dialog>
     </div>
   </body>
 
