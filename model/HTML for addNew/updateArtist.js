@@ -1,4 +1,5 @@
 import { updateArtist } from "../../controller/CRUD/update.js";
+import { updateGrid } from "../../rest.js";
 
 export class updateArtistForm {
   constructor(id, name, career_start, img) {

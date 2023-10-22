@@ -8,7 +8,7 @@ import { updateGrid } from "./rest.js";
 
 window.addEventListener("load", initApp);
 
-async function initApp() {
+export async function initApp() {
   console.log("JS kører");
 
   await updateGrid();
