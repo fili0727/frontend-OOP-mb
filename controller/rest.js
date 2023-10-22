@@ -1,8 +1,8 @@
 "use strict";
 
-import { albumList, albums, searchedAlbumList, updatedAlbumList } from "./controller/albumController.js";
-import { artistList, artists, searchedArtistList, updatedArtistList } from "./controller/artistController.js";
-import { searchedTrackList, trackList, tracks, updatedTrackList } from "./controller/trackController.js";
+import { albumList, albums, searchedAlbumList, updatedAlbumList } from "./albumController.js";
+import { artistList, artists, searchedArtistList, updatedArtistList } from "./artistController.js";
+import { searchedTrackList, trackList, tracks, updatedTrackList } from "./trackController.js";
 
 export const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 

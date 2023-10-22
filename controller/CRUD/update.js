@@ -1,5 +1,5 @@
 import { initApp } from "../../app.js";
-import { endpoint, updateGrid } from "../../rest.js";
+import { endpoint, updateGrid } from "../rest.js";
 import { artists, instantiateArtists } from "../artistController.js";
 
 export async function updateArtist(artist) {

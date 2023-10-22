@@ -1,5 +1,5 @@
 import Album from "../model/album.js";
-import { readAlbums } from "../rest.js";
+import { readAlbums } from "./rest.js";
 import { AlbumRenderer } from "../view/albumrenderer.js";
 import { ListRenderer } from "../view/listrenderer.js";
 

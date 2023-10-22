@@ -1,6 +1,6 @@
 import { deleteArtist } from "../controller/CRUD/delete.js";
 import { albums } from "../controller/albumController.js";
-import { tracksForArtist } from "../rest.js";
+import { tracksForArtist } from "../controller/rest.js";
 import Track from "./track.js";
 import { updateArtistForm } from "./HTML for addNew/updateArtist.js";
 
@@ -76,26 +76,25 @@ export class DetailDialog {
                 <h3>Appears on albums:</h3>
                 <ul>
                     ${artistAlbums
-                      .map(
-                        album => `<li>
+        .map(
+          album => `<li>
                         ${album.title}
                     </li>`
-                      )
-                      .join("")}
+        )
+        .join("")}
                 </ul>
                 <h3>Appears on tracks:</h3>
                 <ul>
                     ${tracks
-                      .map(
-                        track => `<li>
+        .map(
+          track => `<li>
                         ${track.title}
                     </li>`
-                      )
-                      .join("")}
+        )
+        .join("")}
                 </ul>
-                <img class="detail-dialog-img" src="${
-                  this.object.img
-                }" alt='No image'>
+                <img class="detail-dialog-img" src="${this.object.img
+      }" alt='No image'>
                 <div class="crud-button-container">
                 <button class="crud-button clickable update-button">Update</button>
                 <button class="crud-button clickable delete-button">Delete</button>

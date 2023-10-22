@@ -1,4 +1,4 @@
-import { endpoint, updateGrid } from "../../rest.js";
+import { endpoint, updateGrid } from "../rest.js";
 
 export async function deleteArtist(artist) {
     const container = document.querySelector("#detail-dialog");

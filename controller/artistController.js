@@ -1,5 +1,5 @@
 import Artist from "../model/artist.js";
-import { readArtists } from "../rest.js";
+import { readArtists } from "./rest.js";
 import { ArtistRenderer } from "../view/artistrenderer.js";
 import { ListRenderer } from "../view/listrenderer.js";
 

@@ -1,7 +1,7 @@
 import { searchBackend } from "./rest.js";
-import { openAddNewDialog } from "./view/openAddNewDialog.js";
-import { openAddNewSelectedDialog } from "./view/openAddNewSelectedDialog.js";
-import { showFilter, showSort } from "./view/views.js";
+import { openAddNewDialog } from "../view/openAddNewDialog.js";
+import { openAddNewSelectedDialog } from "../view/openAddNewSelectedDialog.js";
+import { showFilter, showSort } from "../view/views.js";
 
 export const searchInput = document.querySelector("#searchbar");
 export const artistsInput = document.querySelector("#artistsBtn");

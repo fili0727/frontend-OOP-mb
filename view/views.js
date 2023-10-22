@@ -1,7 +1,7 @@
 import { albums } from "../controller/albumController.js";
 import { artists } from "../controller/artistController.js";
 import { tracks } from "../controller/trackController.js";
-import { searchBackend, updateGrid } from "../rest.js";
+import { searchBackend, updateGrid } from "../controller/rest.js";
 
 export function showFilter(event) {
   const filterValue = event.target.value;

@@ -1,5 +1,5 @@
 import Track from "../model/track.js";
-import { readTracks } from "../rest.js";
+import { readTracks } from "./rest.js";
 import { TrackRenderer } from "../view/trackrenderer.js";
 import { ListRenderer } from "../view/listrenderer.js";
 

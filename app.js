@@ -3,8 +3,8 @@
 import { albumList, albums, instantiateAlbums } from "./controller/albumController.js";
 import { artistList, artists, instantiateArtists } from "./controller/artistController.js";
 import { instantiateTracks, trackList, tracks } from "./controller/trackController.js";
-import { InitializeAddNewButton, InitializeAddNewRadio, InitializeFilterInput, InitializeSearchInput, InititializeSortInput } from "./eventlisteners.js";
-import { updateGrid } from "./rest.js";
+import { InitializeAddNewButton, InitializeAddNewRadio, InitializeFilterInput, InitializeSearchInput, InititializeSortInput } from "./controller/eventlisteners.js";
+import { updateGrid } from "./controller/rest.js";
 
 window.addEventListener("load", initApp);
 

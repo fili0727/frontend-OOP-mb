@@ -218,3 +218,13 @@ p {
   gap: 10px;
   font-size: 14px;
 }
+
+.album-item:hover {
+  cursor: default;
+  transform: none;
+}
+
+.track-item:hover {
+  cursor: default;
+  transform: none;
+}
