@@ -1,5 +1,5 @@
 import { initApp } from "../../app.js";
-import { endpoint, updateGrid } from "../rest.js";
+import { endpoint, readArtists, updateGrid } from "../rest.js";
 import { artists, instantiateArtists } from "../artistController.js";
 
 export async function updateArtist(artist) {
@@ -22,5 +22,7 @@ export async function updateArtist(artist) {
     console.log(error);
   }
 
+  artists.length = 0;
+  await instantiateArtists();
   await updateGrid();
 }

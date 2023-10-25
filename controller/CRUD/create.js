@@ -1,4 +1,7 @@
-import { endpoint, updateGrid } from "../rest.js";
+import { albums, instantiateAlbums } from "../albumController.js";
+import { artists, instantiateArtists } from "../artistController.js";
+import { endpoint, readTracks, updateGrid } from "../rest.js";
+import { instantiateTracks, tracks } from "../trackController.js";
 
 export async function createArtist(artist) {
 
@@ -20,12 +23,17 @@ export async function createArtist(artist) {
         }
     } catch (error) { console.log(error); }
 
-    updateGrid();
+    artists.length = 0;
+    tracks.length = 0;
+    albums.length = 0;
+
+    await instantiateArtists();
+    await instantiateTracks();
+    await instantiateAlbums();
+    await updateGrid();
 }
 
 export async function createTrack(track) {
-
-    console.log(track);
 
     try {
         const response = await fetch(`${endpoint}tracks`, {
@@ -37,13 +45,16 @@ export async function createTrack(track) {
         if (response.ok) {
             const data = await response.json();
             console.log(await data);
+            console.log(await readTracks());
         } else {
             const errorData = await response.json();
             console.log({ message: errorData });
         }
     } catch (error) { console.log(error); }
 
-    updateGrid();
+    tracks.length = 0;
+    await instantiateTracks();
+    await updateGrid();
 }
 export async function createAlbum(album) {
     try {
@@ -62,5 +73,7 @@ export async function createAlbum(album) {
         }
     } catch (error) { console.log(error); }
 
-    updateGrid();
+    albums.length = 0;
+    await instantiateAlbums();
+    await updateGrid();
 }

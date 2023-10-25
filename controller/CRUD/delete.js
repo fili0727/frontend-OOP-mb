@@ -1,9 +1,10 @@
+import { artists, instantiateArtists } from "../artistController.js";
 import { endpoint, updateGrid } from "../rest.js";
 
 export async function deleteArtist(artist) {
     const container = document.querySelector("#detail-dialog");
 
-    console.log(`artist deleted: ${artist}`);
+    container.close();
 
     try {
         const response = await fetch(`${endpoint}artists/${artist.id}`, {
@@ -20,7 +21,7 @@ export async function deleteArtist(artist) {
         }
     } catch (error) { console.log(error); }
 
-    container.close();
-
-    updateGrid();
+    artists.length = 0;
+    await instantiateArtists();
+    await updateGrid();
 }
