@@ -228,3 +228,12 @@ p {
   cursor: default;
   transform: none;
 }
+
+.edit {
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+input {
+  background-color: lightgray;
+}
