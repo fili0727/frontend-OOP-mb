@@ -13,9 +13,10 @@ export class updateArtistForm {
     const html =
       /*html*/
       `
-      <button id="dialog-close-btn">X</button>
+      <button class="edit-close-button" id="dialog-close-btn">X</button>
         <h2>Edit artist</h2>
          <form id="form-edit-artist" method="dialog">
+         <div class="edit-div">
            <label for="name">Name: </label>
              <input
               type="text"
@@ -24,6 +25,8 @@ export class updateArtistForm {
               value="${this.name}"
               required
               />
+              </div>
+              <div class="edit-div">
            <label for="career_start">Career start:</label>
             <input
               type="text"
@@ -32,6 +35,8 @@ export class updateArtistForm {
               value="${this.career_start}"
               required
             />
+            </div>
+            <div class="edit-div">
           <label for="img">Image: </label>
             <input
               type="url"
@@ -40,7 +45,10 @@ export class updateArtistForm {
               value="${this.img}"
               required
             />
+            </div>
+            <div class="edit-div edit-button">
           <button type="submit" id="form-update-btn">Update artist</button>
+          </div>
         </form>
   `;
     return html;

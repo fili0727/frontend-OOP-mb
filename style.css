@@ -237,3 +237,30 @@ p {
 input {
   background-color: lightgray;
 }
+
+.form-edit-artist {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-div {
+  margin: 20px;
+}
+
+.edit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-button > button {
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: white;
+  font-weight: 600;
+}
+
+.edit-close-button {
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
