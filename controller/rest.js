@@ -9,19 +9,19 @@ export const endpoint = "https://mabi-testdata-01.azurewebsites.net/";
 export const tracksForArtist = [];
 
 export async function readArtists() {
-  const response = await fetch(`${endpoint}/artists`);
+  const response = await fetch(`${endpoint}artists`);
   const data = response.json();
   return data;
 }
 
 export async function readAlbums() {
-  const response = await fetch(`${endpoint}/albums`);
+  const response = await fetch(`${endpoint}albums`);
   const data = response.json();
   return data;
 }
 
 export async function readTracks() {
-  const response = await fetch(`${endpoint}/tracks`);
+  const response = await fetch(`${endpoint}tracks`);
   const data = await response.json();
 
   data.forEach(track => {
