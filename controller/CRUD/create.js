@@ -1,6 +1,6 @@
 import { albums, instantiateAlbums } from "../albumController.js";
 import { artists, instantiateArtists } from "../artistController.js";
-import { endpoint, readTracks, updateGrid } from "../rest.js";
+import { endpoint, readTracks } from "../rest.js";
 import { instantiateTracks, tracks } from "../trackController.js";
 
 export async function createArtist(artist) {
@@ -30,7 +30,6 @@ export async function createArtist(artist) {
     await instantiateArtists();
     await instantiateTracks();
     await instantiateAlbums();
-    await updateGrid();
 }
 
 export async function createTrack(track) {
@@ -54,7 +53,6 @@ export async function createTrack(track) {
 
     tracks.length = 0;
     await instantiateTracks();
-    await updateGrid();
 }
 export async function createAlbum(album) {
     try {
@@ -75,5 +73,4 @@ export async function createAlbum(album) {
 
     albums.length = 0;
     await instantiateAlbums();
-    await updateGrid();
 }
