@@ -1,6 +1,7 @@
 import { createAlbum, createArtist, createTrack } from "./CRUD/create.js";
+import { updateGrid } from "./rest.js";
 
-export function addNewSubmitted(event) {
+export async function addNewSubmitted(event) {
     event.preventDefault();
 
     const container = document.querySelector("#add-new-selected-dialog");
@@ -26,6 +27,8 @@ export function addNewSubmitted(event) {
         };
 
         createArtist(artist);
+        await updateGrid();
+
 
     } else if (form['duration-input']) {
         const track = {
@@ -37,6 +40,8 @@ export function addNewSubmitted(event) {
         };
 
         createTrack(track);
+        await updateGrid();
+
 
     } else if (form['add-album-title']) {
         const album = {
@@ -46,6 +51,8 @@ export function addNewSubmitted(event) {
         };
 
         createAlbum(album);
+        await updateGrid();
+
     }
 
     container.close();
